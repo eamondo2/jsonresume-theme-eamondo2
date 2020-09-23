@@ -7,6 +7,7 @@ a[href]:after {
   content: none !important;
 }
 
+
 #photo{
   display: none;
 }
@@ -21,7 +22,8 @@ blockquote,
 .contact-item,
 .publication,
 .skills,
-.interests {
+.interests,
+.job{
   page-break-inside: avoid;
 }
 
@@ -48,7 +50,7 @@ blockquote,
 #awards:before,
 #education:before {
   background: none;
-}
+} */
 
 #awards .description,
 #education .description,

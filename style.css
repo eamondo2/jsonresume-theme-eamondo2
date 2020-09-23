@@ -7,6 +7,7 @@
 @viewport           { width: device-width; }
 
 body{
+  /* font-size: 1em; */
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   color: #363636;
@@ -16,15 +17,22 @@ blockquote {
   font-size: 1em;
 }
 
-.container{
+/* .container{
   margin-top: 80px;
   margin-bottom: 15px;
   background: #fff;
+} */
+
+.container{
+  /* margin-top: 80px; */
+  /* margin-bottom: 15px; */
+  background: #fff;
 }
 
-#photo-header{
+/* #photo-header{
   margin-top: -75px;
-}
+} */
+
 #photo{
   width: 160px;
   height: 160px;
@@ -119,6 +127,7 @@ blockquote {
   padding: 10px;
   font-weight: 700;
   display: inline-block;
+  text-align: center;
 }
 #awards .description,
 #education .description{
