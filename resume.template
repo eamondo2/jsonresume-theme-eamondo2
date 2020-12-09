@@ -20,16 +20,6 @@
       <div class="row">
         <div class="col-xs-12">
           <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-
-            <!--  
-              {{#photo}}
-              <div id="photo">
-                <img src="{{photo}}" alt="avatar">
-              </div>
-              {{/photo}}
-            -->
-
             <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
               <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
             </div>
@@ -37,8 +27,8 @@
         </div>
       </div>
       <div class="row">
-        {{!-- <div class="col-xs-12 col-sm-7"> --}}
         <div class="col-xs-12 col-sm-6">
+
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
@@ -46,13 +36,18 @@
             <p>{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
+
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
           <div class="box">
             <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
             {{#work}}
+
+
               <div class="job clearfix">
                 <div class="row">
+
+
                   <div class="details">
                     <div class="where">
                       {{name}}
@@ -73,11 +68,13 @@
                     </div>
                     {{/url}}
                     <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <div class="profession">{{position}}</div>
                   </div>
+                
+                
                 </div>
                 <div class="row">
                   <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
                     <div class="description">
                       {{{summary}}}
                       {{#boolHighlights}}
@@ -92,9 +89,12 @@
                   </div>
                 </div>
               </div>
+
+
             {{/work}}
           </div>
           {{/workBool}}
+
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
@@ -113,6 +113,7 @@
             </ul>
           </div>
           {{/awardsBool}}
+
           {{#volunteerBool}}
           <!-- VOLUNTEER -->
           <div class="box">
@@ -150,6 +151,7 @@
             {{/volunteer}}
           </div>
           {{/volunteerBool}}
+
           {{#projectsBool}}
           <!-- PROJECTS -->
           <div class="box">
@@ -163,8 +165,9 @@
             </ul>
           </div>
           {{/projectsBool}}
+
         </div>
-        {{!-- <div class="col-xs-12 col-sm-5"> --}}
+
         <div class="col-xs-12 col-sm-6">
           <!-- CONTACT -->
           <div class="box clearfix">
@@ -209,7 +212,7 @@
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
-                <div class="year pull-left">{{startDateYear}}<br>To<br>{{endDateYear}}</div>
+                <div class="year pull-left">{{endDateYear}}</div>
                 <div class="description pull-right">
                   <h3>{{institution}}</h3>
                   <div class="where">{{organization}}</div>
@@ -239,6 +242,7 @@
             </ul>
           </div>
           {{/educationBool}}
+
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
@@ -258,6 +262,7 @@
             {{/skills}}
           </div>
           {{/skillsBool}}
+
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
@@ -285,6 +290,7 @@
             {{/publications}}
           </div>
           {{/publicationsBool}}
+
           {{#languagesBool}}
           <!-- LANGUAGES -->
           <div class="box">
@@ -296,6 +302,7 @@
             </ul>
           </div>
           {{/languagesBool}}
+
           {{#interestsBool}}
           <!-- HOBBIES -->
           <div class="box">
@@ -314,6 +321,7 @@
             {{/interests}}
           </div>
           {{/interestsBool}}
+
           {{#referencesBool}}
           <div class="box">
             <h2><i class= "fas fa-check-square ico"></i> References</h2>
