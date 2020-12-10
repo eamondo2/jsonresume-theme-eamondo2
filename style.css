@@ -11,7 +11,7 @@ body{
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   color: #363636;
-  background: #334960;
+  background: #ffffff;
 }
 blockquote {
   font-size: 1em;
@@ -67,11 +67,12 @@ blockquote {
 #text-header h1 sup{
   opacity: 0.5;
 }
-#text-header:after{
+#headrow:after{
   width: 100%;
   height: 3px;
   border-bottom: 1px solid #ddd;
   margin-top: 15px;
+  margin-bottom: 15px;
   content: '';
   display: block;
 }
@@ -82,7 +83,7 @@ blockquote {
 }
 .box h2{
   color: #227c74;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -180,7 +181,7 @@ blockquote {
   border-right: 1px solid #ccc;
 }
 .job .where{
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
 }
 .job .year{
@@ -226,13 +227,14 @@ blockquote {
   border-bottom: 1px solid #ccc;
   color: #32475c;
   background: #eee;
+  margin-right: 10px;
 }
 .contact-item:last-child .icon{
   border-bottom: none;
 }
 .contact-item .title{
-  width: 80%;
-  width: calc(100% - 55px);
+  width: 100%;
+  /* width: calc(100% - 55px); */
   font-weight: 700;
   opacity: 0.9;
 }
@@ -240,8 +242,8 @@ blockquote {
   margin-top: 10px;
 }
 .contact-item .description{
-  width: 80%;
-  width: calc(100% - 55px);
+  width: 100%;
+  /* width: calc(100% - 55px); */
   color: #334960;
 }
 
