@@ -182,7 +182,7 @@
             <h2><i class="fas fa-bullseye ico"></i> Contact</h2>
             {{#basics.location}}
             <div class="d-flex px-2 contact-item">
-              <div class="icon float-left text-center"><span class="fas fa-map-marker fa-lg"></span></div>
+              <div class="icon float-left text-center"><span class="fas fa-map-marker fa-lg fa-fw"></span></div>
               <div class="float-right">
                 {{#basics.location.address}}
                 <div class="title float-right">
@@ -197,25 +197,25 @@
             {{/basics.location}}
             {{#basics.phone}}
             <div class="d-flex px-2 contact-item">
-              <div class="icon float-left text-center"><span class="fas fa-phone fa-lg"></span></div>
+              <div class="icon float-left text-center"><span class="fas fa-phone fa-lg fa-fw"></span></div>
               <div class="title only float-right">{{basics.phone}}</div>
             </div>
             {{/basics.phone}}
             {{#basics.email}}
             <div class="d-flex px-2 contact-item">
-              <div class="icon float-left text-center"><span class="fas fa-envelope fa-lg"></span></div>
+              <div class="icon float-left text-center"><span class="fas fa-envelope fa-lg fa-fw"></span></div>
               <div class="title only float-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
             </div>
             {{/basics.email}}
             {{#basics.url}}
             <div class="d-flex px-2 contact-item">
-              <div class="icon float-left text-center"><span class="fas fa-globe fa-lg"></span></div>
+              <div class="icon float-left text-center"><span class="fas fa-globe fa-lg fa-fw"></span></div>
               <div class="title only float-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
             </div>
             {{/basics.url}}
             {{#basics.profiles}}
             <div class="d-flex px-2 contact-item">
-              <div class="icon float-left text-center"><span class="{{iconClass}} fa-lg"></span></div>
+              <div class="icon float-left text-center"><span class="{{iconClass}} fa-lg fa-fw"></span></div>
               <div>
                 <div class="title float-right">{{network}}</div>
                 <div class="description float-right"><a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
