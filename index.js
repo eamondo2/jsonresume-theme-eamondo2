@@ -89,7 +89,10 @@ function render(resumeObject) {
                 p.iconClass = "fab fa-gitlab";
                 break;
             case "gitea":
-                p.iconClass = "fab fa-git-alt"
+                p.iconClass = "fab fa-git-alt";
+                break;
+            case "pdf":
+                p.iconClass = "fas fa-file-pdf";
                 break;
             case "keybase":
                 p.iconClass = "fas fa-key";
