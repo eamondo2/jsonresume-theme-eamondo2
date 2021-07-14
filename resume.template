@@ -202,9 +202,11 @@
               {{#projects}}
               <div class="card">
                 <div class="card-header" style="font-weight:bold">{{name}}:</div>
-                <div class="card-body" stye="padding:0rem;">
-                  {{description}}
-                </div>
+                <ul class="list-group">
+                  {{#highlights}}
+                  <li class="list-group-item">{{{.}}}</li>
+                  {{/highlights}}
+                </ul>
               </div>
               {{/projects}}
             </div>
