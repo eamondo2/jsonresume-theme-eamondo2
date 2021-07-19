@@ -16,8 +16,9 @@
     </style>
   </head>
   <body>
+
     <div class="container-fluid">
-      
+
       {{! 1st header row, title etc. }}
       <div class="row">
         <div class="col-xs-12" id="headrow">
@@ -37,6 +38,13 @@
               {{/basics.label}}
               </h1>
             </div>
+            
+            {{#pdfBool}}
+            <a href="https://resume.bortle-host.io/pdf" class="float">
+              <i class="fas fa-file-pdf my-float"></i>
+            </a>
+            {{/pdfBool}}
+
           </div>
         </div>
       </div>
@@ -44,7 +52,7 @@
       {{! 2nd Header row, about me and contact. }}
       <div class="row justify-content-around">
         
-        <div class="col-sm">
+        <div class="col-lg">
 
           {{#basics.summary}}
           <!-- ABOUT ME -->
@@ -56,7 +64,7 @@
 
         </div>
 
-        <div class="col-sm">
+        <div class="col-lg">
 
           <!-- CONTACT -->
           <div class="card">
@@ -123,7 +131,7 @@
       <div class="row justify-content-around">
 
         {{! Left-hand, skills etc. }}
-        <div class="col-sm-3">
+        <div class="col-lg">
 
           {{#educationBool}}
           <!-- EDUCATION -->
@@ -192,7 +200,7 @@
         </div>
 
         {{! Middle, projects }}
-        <div class="col-sm-3">
+        <div class="col-lg">
 
           {{#projectsBool}}
           <!-- PROJECTS -->
@@ -216,7 +224,7 @@
         </div>
 
         {{! Right-hand, work experience }}
-        <div class="col-sm">
+        <div class="col-lg">
 
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
