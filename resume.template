@@ -38,7 +38,7 @@
               {{/basics.label}}
               </h1>
             </div>
-            
+
             {{#pdfBool}}
             <a href="https://resume.bortle-host.io/pdf" class="float">
               <i class="fas fa-file-pdf my-float"></i>
@@ -131,7 +131,7 @@
       <div class="row justify-content-around">
 
         {{! Left-hand, skills etc. }}
-        <div class="col-lg">
+        <div class="col-lg-3">
 
           {{#educationBool}}
           <!-- EDUCATION -->
