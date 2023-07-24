@@ -90,10 +90,16 @@
               {{/basics.location}}
 
               {{#basics.phone}}
+
               <div class="card px-2 contact-item">
-                <div class=" card-header icon text-center"><span class="fas fa-phone fa-lg fa-fw"></span></div>
+                <div class="card-header icon text-center">
+                  <span class="fas fa-phone fa-lg fa-fw"></span>
+                </div>
+
                 <div class="title only float-right" style="text-align:center;">{{basics.phone}}</div>
+              
               </div>
+              
               {{/basics.phone}}
 
               {{#basics.email}}
