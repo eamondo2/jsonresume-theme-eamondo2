@@ -37,6 +37,11 @@ function getMonth(startDateStr) {
 
 function render(resumeObject) {
 
+    // Add toggle for rendering with/without floating PDF link.
+    if (resumeObject.meta.pdfLink) {
+        resumeObject.pdfBool = true;
+    }
+
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
     if(resumeObject.basics && resumeObject.basics.email) {
         resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
