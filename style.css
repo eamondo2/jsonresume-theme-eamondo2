@@ -291,3 +291,66 @@ blockquote {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1e2e;
+    color: #d4d8e8;
+  }
+  .container, .container-fluid {
+    background: #1a1e2e;
+  }
+  /* Section headings */
+  .card h2 {
+    color: #4db6ac;
+  }
+  /* Job/education detail boxes */
+  .job .details,
+  #education .description,
+  #awards .description {
+    background: #252a3a;
+    border-color: #3a4055;
+  }
+  #education .year {
+    background: #1a1e2e;
+  }
+  /* About text box */
+  .about-text {
+    background-color: #252a3a;
+    border-color: #3a4055;
+  }
+  /* Skill and interest tags */
+  .skill {
+    background: #2e4a6a;
+  }
+  /* Contact icon cells */
+  .contact-item .icon {
+    background: #252a3a;
+    border-color: #3a4055;
+    color: #7eb8d4;
+  }
+  .contact-item .description {
+    color: #7eb8d4;
+  }
+  /* Dividers and list items */
+  .list-group-item {
+    background: transparent;
+    border-color: #2e3348;
+    color: #d4d8e8;
+  }
+  /* Header separator */
+  #headrow:after {
+    border-color: #2e3348;
+  }
+  /* Muted text */
+  .job .year {
+    opacity: 0.6;
+  }
+  /* Links */
+  a {
+    color: #7eb8d4;
+  }
+  a:hover {
+    color: #a8d8ea;
+  }
+}
