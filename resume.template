@@ -49,29 +49,89 @@
         </div>
       </div>
 
-      {{! 2nd Header row, about me and contact. }}
+      {{! Split into two columns }}
       <div class="row justify-content-around">
-        
-        <div class="col-lg">
+
+        {{! Leftmost, work experience and about me section}}
+        <div class="col-lg-8">
 
           {{#basics.summary}}
           <!-- ABOUT ME -->
-          <div class="card">
+          <div class="card" id="about-div">
             <h2 class="card-title"><i class="fas fa-user ico"></i> About</h2>
-            <p>{{{basics.summary}}}</p>
+            {{#aboutListBool}}
+            <ul class="list-group">
+              <li class="list-group-item">{{{.}}}</li>
+            </ul>
+            {{/aboutListBool}}
+            {{#aboutSingleBool}}
+            <p class="about-text">{{{basics.summary}}}</p>
+            {{/aboutSingleBool}}
           </div>
           {{/basics.summary}}
 
+          {{#workBool}}
+          <!-- WORK EXPERIENCE -->
+          <div class="card">
+            <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
+            {{#work}}
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where d-flex justify-content-between">
+                      <div class="float-left px-2">
+                        {{name}}
+                      </div>
+                        {{#location}}
+                      <div class="float-right px-2">
+                        {{location}}
+                      </div>
+                        {{/location}}
+                    </div>
+                    {{#description}}
+                    <div class="description">
+                      {{description}}
+                    </div>
+                    {{/description}}
+                    {{#url}}
+                    <div class="address">
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                    </div>
+                    {{/url}}
+                    <div class="year px-2">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <div class="profession px-2">{{position}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="description">
+                      {{{summary}}}
+                      {{#boolHighlights}}
+                      {{! <div class="highlights">Highlights</div> }}
+                      <ul class="list-group">
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
+                      {{/boolHighlights}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/work}}
+          </div>
+          {{/workBool}}
+          
         </div>
 
-        <div class="col-lg">
+
+        {{! Rightmost, contact details and projects }}
+        <div class="col-lg-4">
 
           <!-- CONTACT -->
           <div class="card">
-
             <h2 class="card-title"><i class="fas fa-bullseye ico"></i> Contact</h2>
-
-            <div class="card-group">
+            <div class="card-columns">
 
               {{#basics.location}}
               <div class="card px-2 contact-item">
@@ -90,16 +150,13 @@
               {{/basics.location}}
 
               {{#basics.phone}}
-
               <div class="card px-2 contact-item">
                 <div class="card-header icon text-center">
                   <span class="fas fa-phone fa-lg fa-fw"></span>
                 </div>
 
                 <div class="title only float-right" style="text-align:center;">{{basics.phone}}</div>
-              
               </div>
-              
               {{/basics.phone}}
 
               {{#basics.email}}
@@ -126,18 +183,26 @@
               {{/basics.profiles}}
 
             </div>
-
           </div>
-        
-        </div>
 
-      </div>
-
-      {{! Split into three columns, variable width }}
-      <div class="row justify-content-around">
-
-        {{! Left-hand, skills etc. }}
-        <div class="col-lg-3">
+          {{#projectsBool}}
+          <!-- PROJECTS -->
+          <div class="card">
+            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
+            <div class="card-column">
+              {{#projects}}
+              <div class="card">
+                <div class="card-header" style="font-weight:bold">{{name}}:</div>
+                <ul class="list-group">
+                  {{#highlights}}
+                  <li class="list-group-item">{{{.}}}</li>
+                  {{/highlights}}
+                </ul>
+              </div>
+              {{/projects}}
+            </div>
+          </div>
+          {{/projectsBool}}
 
           {{#educationBool}}
           <!-- EDUCATION -->
@@ -145,18 +210,14 @@
             <h2><i class="fas fa-university ico"></i> Education</h2>
             <ul id="education" class="clearfix">
               {{#education}}
-              <li>
-                <div class="description float-right">
+              <li class="d-flex flex-row justify-content-start">
+                {{#hasLogo}}
+                <img class="logo-container w-25" src="{{logoRef}}">
+                {{/hasLogo}}
+                <div class="description align-self-stretch float-right">
                   <h3 style="text-align:center;">{{institution}}</h3>
                   <h4 style="text-align:center;">{{endDateYear}}</h4>
-                  <div class="where" style="text-align:center;">{{organization}}</div>
-                  {{#url}}
-                  <div class="address">
-                    <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                  </div>
-                  {{/url}}
                   {{#studyType}}<p style="text-align:center;"><i class= "fas fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
-                  <p>{{area}}</p>
                 </div>
               </li>
               {{/education}}
@@ -201,99 +262,7 @@
             </div>
             {{/interests}}
           </div>
-          {{/interestsBool}}          
-
-        </div>
-
-        {{! Middle, projects }}
-        <div class="col-lg">
-
-          {{#projectsBool}}
-          <!-- PROJECTS -->
-          <div class="card">
-            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
-            <div class="card-column">
-              {{#projects}}
-              <div class="card">
-                <div class="card-header" style="font-weight:bold">{{name}}:</div>
-                <ul class="list-group">
-                  {{#highlights}}
-                  <li class="list-group-item">{{{.}}}</li>
-                  {{/highlights}}
-                </ul>
-              </div>
-              {{/projects}}
-            </div>
-          </div>
-          {{/projectsBool}}
-
-        </div>
-
-        {{! Right-hand, work experience }}
-        <div class="col-lg">
-
-          {{#workBool}}
-          <!-- WORK EXPERIENCE -->
-          <div class="card">
-            <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
-
-            {{#work}}
-
-              <div class="job clearfix">
-
-                <div class="row">
-
-
-                  <div class="details">
-
-                    <div class="where d-flex justify-content-between">
-                      <div class="float-left px-2">
-                        {{name}}
-                      </div>
-                        {{#location}}
-                      <div class="float-right px-2">
-                        {{location}}
-                      </div>
-                        {{/location}}
-                    </div>
-
-                    {{#description}}
-                    <div class="description">
-                      {{description}}
-                    </div>
-                    {{/description}}
-                    {{#url}}
-                    <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                    </div>
-                    {{/url}}
-                    <div class="year px-2">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
-                    <div class="profession px-2">{{position}}</div>
-                  </div>
-                
-                
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="description">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      {{! <div class="highlights">Highlights</div> }}
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            {{/work}}
-          </div>
-          {{/workBool}}
+          {{/interestsBool}}      
 
         </div>
 

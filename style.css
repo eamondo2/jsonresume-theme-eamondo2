@@ -36,6 +36,21 @@ blockquote {
   margin-left: 2px;
 }
 
+.about-text{
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  margin-left: 4.3vw;
+  
+  padding: .5rem 1rem;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+
+
 #text-header h1{
   margin: 0;
   padding: 0;
@@ -74,6 +89,8 @@ blockquote {
   margin-bottom: 5px;
   border: none;
   break-inside: avoid;
+  word-wrap: unset;
+  min-width: fit-content;
   display: block;
 }
 .card h2{
@@ -87,19 +104,24 @@ blockquote {
   padding: 0rem;
 }
 
-
-@media (min-width: 576px) {
-  .card-columns {
-      column-count: 1;
-  }
+.card-group{
+  padding-left: 1.5rem;
 }
 
-@media (min-width: 860px) {
-  .card-columns {
-      column-count: 2;
-  }
+.card-columns{
+  column-count: 1;
 }
 
+.card .list-group{
+  padding: .5rem 1rem;
+  padding-right: 0rem;
+}
+
+
+.logo-container{
+  min-width: 270px;
+  min-height: 85px;
+}
 
 #awards,
 #education{
@@ -116,7 +138,9 @@ blockquote {
   z-index: 2;
   position: relative;
   float: left;
+
 }
+
 #awards .year,
 #education .year{
   width: 14%;
@@ -134,7 +158,7 @@ blockquote {
   width: 83%;
   display: inline-block;
   background: #eee;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   position: relative;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -152,6 +176,7 @@ blockquote {
 #education .description p{
   margin-top: 5px;
   padding: 0;
+  margin-bottom: 0px;
 }
 
 .job{
@@ -185,7 +210,7 @@ blockquote {
   font-weight: bold;
 }
 .job .job-details {
-  padding-left: 5%;
+  padding-left: 4vw;
   width: 100%;
 }
 .publication {
@@ -206,6 +231,7 @@ blockquote {
 .contact-item{
   /* width: 100%; */
   float: left;
+  max-width: fit-content;
 }
 .contact-item .icon{
   padding: 2px;
@@ -220,7 +246,7 @@ blockquote {
   opacity: 0.9;
 }
 .contact-item .title.only{
-  margin-top: 10px;
+  margin-top: 2px;
 }
 .contact-item .description{
   width: 100%;

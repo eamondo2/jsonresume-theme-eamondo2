@@ -42,6 +42,14 @@ function render(resumeObject) {
         resumeObject.pdfBool = true;
     }
 
+    
+    // Test if summary is array of strings
+    if (_.isArray(resumeObject.basics.summary)) {
+        resumeObject.aboutListBool = true;
+    } else {
+        resumeObject.aboutSingleBool = true;
+    }
+
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
     if(resumeObject.basics && resumeObject.basics.email) {
         resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
@@ -165,13 +173,34 @@ function render(resumeObject) {
     if (resumeObject.projects && resumeObject.projects.length) {
         if (resumeObject.projects[0].name) {
             resumeObject.projectsBool = true;
+            
+            _.each(resumeObject.projects, function(project) {
+                let modifiedHighlights = [];
+                for (let highlightObj of project.highlights) {
+                    //check if we've got the obj. format
+                    if (Object.keys(highlightObj).includes("text") && Object.keys(highlightObj).includes("link")) {
+                        highlightObj = `${highlightObj.text} <a href="${highlightObj.link}"><i class="fas fa-code-branch ico"></i></a>`;
+                    } else if (_.isString(highlightObj)) {
+                        highlightObj = `${highlightObj}`
+                    }
+                    modifiedHighlights.push(highlightObj);
+                }                
+                
+                project.highlights = modifiedHighlights;
+            });
+            
         }
     }
+
+
 
     if (resumeObject.education && resumeObject.education.length) {
         if (resumeObject.education[0].institution) {
             resumeObject.educationBool = true;
             _.each(resumeObject.education, function(e){
+                if( e.logoRef ) {
+                    e.hasLogo = true;
+                }
                 if( !e.area || !e.studyType ){
                   e.educationDetail = (e.area == null ? '' : e.area) + (e.studyType == null ? '' : e.studyType);
                 } else {
