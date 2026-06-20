@@ -300,6 +300,16 @@ blockquote {
   .container, .container-fluid {
     background: #1a1e2e;
   }
+  /* Bootstrap sets background-color: #fff on .card — override explicitly */
+  .card {
+    background-color: #1a1e2e;
+  }
+  /* #334960 is too dark on the dark background — apply to all occurrences */
+  #text-header h1 span,
+  .item-skills,
+  .item-interests {
+    color: #8ab8cc;
+  }
   /* Section headings */
   .card h2 {
     color: #4db6ac;
